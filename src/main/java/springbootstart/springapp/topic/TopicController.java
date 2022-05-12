@@ -1,20 +1,25 @@
 package springbootstart.springapp.topic;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+
 import java.util.List;
+
 
 @RestController
 public class TopicController {
+    @Autowired
+    private TopicService topicservice;
     @RequestMapping("/topic")
     public List<Topic> getAllTopics()
     {
-        return Arrays.asList(
-                new Topic("12ERQ","spring","springDescription"),
-                new Topic("java","java spring","javaspringDescription"),
-                new Topic("java script","java script framework","java script ōDescription")
-        );
+        return topicservice.getAllTopics();
     }
+    @RequestMapping("/topic/{id}")
+    public Topic getTopic(@PathVariable String id)
+    {
+        return topicservice.getTopic(id);
+    }
+
 }

@@ -1,6 +1,4 @@
 package springbootstart.springapp;
-
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +7,7 @@ public class SpringApp {
     public static void main(String[] args)
     {
         try{
-            System.out.println("Homepage");
+
             SpringApplication.run(SpringApp.class,args);
 
         }
