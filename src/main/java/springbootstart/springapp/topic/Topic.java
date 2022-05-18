@@ -36,6 +36,6 @@ public class Topic {
         this.description = description;
     }
 
-
-
+    public Topic() {
+    }
 }

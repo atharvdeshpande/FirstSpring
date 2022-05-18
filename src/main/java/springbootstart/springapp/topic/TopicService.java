@@ -10,6 +10,7 @@ import java.util.List;
 public class TopicService {
 
     private List<Topic> topics=new ArrayList<>(Arrays.asList(
+
             new Topic("12ERQ","spring","springDescription"),
                 new Topic("java","java spring","java spring Description"),
                 new Topic("java script","java script framework","java script ōDescription")
@@ -24,4 +25,24 @@ public class TopicService {
     }
 
 
+    public void addTopics(Topic t) {
+       topics.add(t);
+    }
+
+    public void updateTopics(String id, Topic t) {
+
+        for (int i=0;i<topics.size();i++)
+        {
+            Topic top=topics.get(i);
+            if(top.getId().equals(id))
+            {
+                topics.set(i,t);
+                return;
+            }
+        }
+    }
+
+    public void delTopic(String id) {
+        topics.removeIf(t ->t.getId().equals(id));
+    }
 }
