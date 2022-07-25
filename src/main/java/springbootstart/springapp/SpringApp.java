@@ -6,14 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringApp {
     public static void main(String[] args)
     {
-        try{
-
-            SpringApplication.run(SpringApp.class,args);
-
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
+        SpringApplication.run(SpringApp.class,args);
 
     }
 }
