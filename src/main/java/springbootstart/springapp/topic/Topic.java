@@ -1,22 +1,28 @@
 package springbootstart.springapp.topic;
 
-public class Topic {
+import javax.persistence.*;
 
-    private String id;
+@Entity
+@Table(name = "book")
+public class Topic {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "topic_id")
+    private int id;
     private String name;
     private String description;
 
-    public Topic(String id, String name, String description) {
+    public Topic(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
