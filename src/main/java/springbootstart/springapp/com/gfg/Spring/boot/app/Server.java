@@ -10,5 +10,4 @@ public class Server implements WebServerFactoryCustomizer<ConfigurableWebServerF
     public void customize(ConfigurableWebServerFactory factory){
         factory.setPort(8090);
     }
-
 }
